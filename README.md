@@ -34,9 +34,14 @@ make clean;make
 ```
 
 ## V.Run
+We use 712 port. You should open this port?(in default).
+
+You can also set other port in http_sever.cc
 ```shell
 ./parser
 nohup ./http_server > log/log.txt 2>&1 &
 ```
+
+Enter ServerIp:port in the browser to search.
 
 
