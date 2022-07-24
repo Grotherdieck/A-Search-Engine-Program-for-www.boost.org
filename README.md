@@ -6,7 +6,7 @@ Use open source tools : boost、cppjieba、jsoncpp、cpp-httplib、jQuery.
 
 Language:
 
-**C++** : clean data source(HTML tags)、build forward index & inverted index、provide searcer function、build httpServer.
+**C++** : clean data source(HTML tags)、build forward index & inverted index、provide search function、build httpServer.
 
 
 
