@@ -1,7 +1,18 @@
-# A-Search-Engine-Program-for-www.boost.org
-A mini search engine cpp program for www.boost.org ,because this website has no search function.
+# What's this ?
+
+A mini **search engine** cpp program for www.boost.org , because this website has no search function.
+
 Use open source tools : boost、cppjieba、jsoncpp、cpp-httplib、jQuery.
-For details, see [My CSDN](https://blog.csdn.net/CS_COPy/article/details/125965699)
+
+Language:
+
+**C++** : clean data source(HTML tags)、build forward index & inverted index、provide searcer function、build httpServer.
+
+
+
+**Javascript** : Animate page、Get Search word、use Ajax send search word to httpserver、Get jsonstring and Generate search results page.
+
+For details, see [My CSDN BLOG(Language:Chinese)](https://blog.csdn.net/CS_COPy/article/details/125965699).
 
 # Final results
 ![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/20220724202018.png)
