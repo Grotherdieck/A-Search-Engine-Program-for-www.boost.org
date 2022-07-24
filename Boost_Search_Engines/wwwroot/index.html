@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+
+<head>
+    <!-- jQuery库 -->
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="image/png/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/png/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/png/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script src="https://kit.fontawesome.com/69f4793668.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boost官网搜索引擎</title>
+    <style>
+        /*去掉html的内外边距*/
+        * {
+            /*设置外边距*/
+            margin: 0;
+            /*设置内边距*/
+            padding: 0;
+        }
+        /*将body的内容100%和网页吻合*/
+        html, 
+        body {
+            height: 100%;
+        }
+        /* 类选择器 */
+        .container {
+            /* 设置div的宽度 */
+            width: 800px;
+            /* 通过设置外边距达到居中的目的 */
+            margin: 0px auto;
+            /* 设置外边距的上边距保持元素和网页的上部有距离 */
+            /* margin-top: 20px; */
+            height: 100%;
+            /* text-align:center; */
+
+        }
+        /* 复合选择器 */
+        .container .search {
+            /* 宽度与父标签保持一直 */
+            width: 100%;
+            /* 高度设置为52像素点 */
+            height: 59px;
+            padding-top: 40%;
+            /* margin-bottom: 10px; */
+        }
+        /* 设置上面的搜索框和按钮的大小 */
+        .container .search input {
+            /* float:right; */
+            width: 600px;
+            height: 59px;
+            font-size: 19px;
+            border: 1px solid#ccc; border-radius: 16px;
+            font-family: Georgia, Times, 'Times New Roman', serif;
+            padding-left: 10px;
+            /* border-right: none; */
+        }
+        .container .search button {
+            /* float: left; */
+            width: 120px;
+            height: 50px;
+            /* border-radius: 50%; */
+            display: inline-block;
+            padding: 15px 25px;
+            /* font-size: 24px; */
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #555555;
+            background-color: #fff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+            font-size: 17px;
+            font-family: Georgia, Times, 'Times New Roman', serif;
+            /* background-color: #555555; */
+        }
+        .container .search button:hover {
+            background-color: #006650;
+            color:#006650;
+        }
+        .container .search button:active {
+            background-color: #006650;
+            box-shadow: 0 2px #999;
+            color:#006650;
+            transform: translateY(4px);
+        }
+        .container .result {
+            width: 100%;
+        }
+        .container .item {
+            margin-top: 15px;
+        }
+        .container .item a {
+            /* 去掉下划线 */
+            text-decoration: none;
+            font-size: 20px;
+            color: #4e6ef2;
+            display: block;
+        }
+        .container .item p {
+            margin-top:5px;
+            font-size: 15px;
+            font-family: "Microsoft YaHei","黑体","宋体",sans-serif;;
+        }
+        .container .item i {
+            font-style: normal;
+            color:green;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <img src="https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/Cat.png" alt="load wrong"> -->
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass" style="font-size:30px;color: black;margin-top: auto;"></i>
+            <input type="text" placeholder="输入搜索关键字">
+            <button onclick="Search()">点击搜索</button>            
+        </div>
+         
+        <div class="result">
+            <!-- 动态生成网页内容 -->
+            <!-- <div class="item">
+                <a href="#">boost</a>
+                <p>这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要</p>
+                <i>http://www.routeryt.com/</i>
+            </div>
+            <div class="item">
+                <a href="#">这是标题</a>
+                <p>这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要</p>
+                <i>http://www.routeryt.com/</i>
+            </div>
+            <div class="item">
+                <a href="#">这是标题</a>
+                <p>这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要</p>
+                <i>http://www.routeryt.com/</i>
+            </div>
+            <div class="item">
+                <a href="#">这是标题</a>
+                <p>这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要</p>
+                <i>http://www.routeryt.com/</i>
+            </div>
+            <div class="item">
+                <a href="#">这是标题</a>
+                <p>这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要</p>
+                <i>http://www.routeryt.com/</i>
+            </div>
+            <div class="item">
+                <a href="#">这是标题</a>
+                <p>这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要这是摘要</p>
+                <i>http://www.routeryt.com/</i>
+            </div> -->
+        </div>
+    </div>
+    <script>
+        function Search() {
+            // test
+            //alert("hello js");
+            // 1.提取数据
+            // $可以看做是js的别称
+            let psrh = $(".container .search");
+            psrh.css("padding-top", "10px");
+            let query = $(".container .search input").val();
+            // console.log("query = " + query);// console是浏览器的一个对话框 可以查看浏览器数据
+            // 2.发起http请求 ajax 一个和后端进行进行数据交互的函数
+            $.ajax({
+                type:"GET",
+                url:"/s?word=" + query,
+                success: function(data) {
+                    // console.log(data);
+                    // 获得了信息去构建html
+                    if(data != null) BuildHtml(data);
+                    else BuildEmptyRes();
+                }
+            });
+        }
+        function BuildHtml(data)
+        {
+            // 获取result标签
+            let result_lable = $(".container .result");
+            // 清空历史结果
+            result_lable.empty();
+            // 遍历得到的数据
+            for (let elem of data)
+            {
+                let a_lable = $("<a>", {
+                    text: elem.title,
+                    href: elem.url,
+                    // 设置跳转
+                    target: "_blank"
+                });
+                let p_lable = $("<p>", {
+                    text: elem.summary
+                });
+                let i_lable = $("<i>", {
+                    text: elem.url
+                });
+                // 合并为一个item
+                let div_lable = $("<div>", {
+                    class: "item"
+                });
+                a_lable.appendTo(div_lable);
+                p_lable.appendTo(div_lable);
+                i_lable.appendTo(div_lable);
+                // 添加到result_table去
+                div_lable.appendTo(result_lable);
+            }
+        }
+        function BuildEmptyRes()
+        {
+            // alert("搜索内容不存在.");
+            let result_lable = $(".container .result");
+            result_lable.empty();
+            let a_lable = $("<a>", {
+                    text: "这内容我们这没有,不如百度一下?",
+                    href: "https://www.baidu.com",
+                    // 设置跳转
+                    target: "_blank"
+                });
+                let p_lable = $("<p>", {
+                    text: "这里空空如也"
+                });
+                let i_lable = $("<i>", {
+                    text: "https://www.baidu.com"
+                });
+                // 合并为一个item
+                let div_lable = $("<div>", {
+                    class: "item"
+                });
+                a_lable.appendTo(div_lable);
+                p_lable.appendTo(div_lable);
+                i_lable.appendTo(div_lable);
+                // 添加到result_table去
+                div_lable.appendTo(result_lable);
+        }
+    </script>
+</body>
+</html>
