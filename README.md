@@ -55,4 +55,20 @@ nohup ./http_server > log/log.txt 2>&1 &
 
 Enter ServerIp:port in the browser to search.
 
+## VI.Update web resources of search engines
+
+Download the HTML file of the target web page and put it in the newhtml folder.
+
+Name the HTML file "url.html" (url does not contain a prefix like http://)
+
+run 
+```shell
+./update
+// close http_sever 
+// Through ps -axj | head -1 && ps -axj | grep '/ http_ server'command find PID off
+
+nohup ./http_server > log/log.txt 2>&1 &// restart
+```
+
+
 
