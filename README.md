@@ -19,8 +19,6 @@ For details, see [My CSDN BLOG(Language:Chinese)](https://blog.csdn.net/CS_COPy/
 
 ![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/20220724202118.png)
 
-![](https://router-picture-bed.oss-cn-chengdu.aliyuncs.com/img/20220724173715.png)
-
 # How to use it ?
 First, our environment is Centos7.6, Your server should try to maintain this version.
 ## I.Install boost
